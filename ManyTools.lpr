@@ -10,7 +10,7 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Main, About, RandomHex
+  Forms, Main, About, RandomHex, RandomUUID
   { you can add units after this };
 
 {$R *.res}
@@ -23,6 +23,7 @@ begin
   Application.CreateForm(TMainForm, MainForm);
   Application.CreateForm(TAboutForm, AboutForm);
   Application.CreateForm(TRandomHexForm, RandomHexForm);
+  Application.CreateForm(TRandomUUIDForm, RandomUUIDForm);
   Application.Run;
 end.
 

@@ -1,0 +1,47 @@
+object RandomUUIDForm: TRandomUUIDForm
+  Left = 359
+  Height = 263
+  Top = 203
+  Width = 430
+  Caption = 'RandomUUIDForm'
+  ClientHeight = 263
+  ClientWidth = 430
+  OnCreate = FormCreate
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 8
+    Height = 247
+    Top = 8
+    Width = 414
+    Align = alClient
+    BorderSpacing.Around = 8
+    BevelOuter = bvNone
+    ClientHeight = 247
+    ClientWidth = 414
+    TabOrder = 0
+    object EditUUID: TEdit
+      Left = 0
+      Height = 24
+      Top = 0
+      Width = 414
+      Align = alTop
+      Alignment = taCenter
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      ParentFont = False
+      TabOrder = 0
+    end
+    object ButtonGenerate: TButton
+      Left = 0
+      Height = 25
+      Top = 28
+      Width = 414
+      Align = alTop
+      BorderSpacing.Top = 4
+      Caption = 'Generate Random UUID v4'
+      OnClick = ButtonGenerateClick
+      TabOrder = 1
+    end
+  end
+end

@@ -29,6 +29,7 @@ object MainForm: TMainForm
       BorderStyle = bsNone
       Items.Strings = (
         'Random Hex Generator'
+        'Random UUID Generator'
       )
       ItemHeight = 16
       OnSelectionChange = ListBoxFunctionsSelectionChange

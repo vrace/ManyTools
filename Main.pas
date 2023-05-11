@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  Menus, About, RandomHex;
+  Menus, About, RandomHex, RandomUUID;
 
 type
 
@@ -26,6 +26,8 @@ type
     procedure MenuItemAboutClick(Sender: TObject);
   private
     selectedFunction: String;
+    selectedForm: TForm;
+    function SelectFunctionForm(selected: String): TForm;
   public
 
   end;
@@ -55,15 +57,35 @@ begin
     selectedFunction := selected;
     PanelStage.Caption := '';
     LabelFunctionName.Caption := selected;
-    RandomHexForm.Parent := PanelStage;
-    RandomHexForm.Align := TAlign.alTop;
-    RandomHexForm.Show;
+    if selectedForm <> Nil then
+    begin
+      selectedForm.Hide;
+    end;
+
+    selectedForm := SelectFunctionForm(selected);
+    if selectedForm <> Nil then
+    begin
+      selectedForm.Parent := PanelStage;
+      selectedForm.Align := TAlign.alTop;
+      selectedForm.Show;
+    end;
   end;
 end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
   selectedFunction := '';
+  selectedForm := Nil;
+end;
+
+function TMainForm.SelectFunctionForm(selected: String): TForm;
+begin
+  case selected of
+    'Random Hex Generator': result := RandomHexForm;
+    'Random UUID Generator': result := RandomUUIDForm;
+  else
+    result := Nil;
+  end;
 end;
 
 end.
