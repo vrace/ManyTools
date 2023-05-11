@@ -5,10 +5,18 @@ unit Main;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
 type
-  TForm1 = class(TForm)
+
+  { TMainForm }
+
+  TMainForm = class(TForm)
+    LabelFunctionName: TLabel;
+    ListBoxFunctions: TListBox;
+    PanelStage: TPanel;
+    PanelFunctions: TPanel;
+    Splitter1: TSplitter;
   private
 
   public
@@ -16,7 +24,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  MainForm: TMainForm;
 
 implementation
 
