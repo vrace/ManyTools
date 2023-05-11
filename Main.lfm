@@ -7,6 +7,7 @@ object MainForm: TMainForm
   ClientHeight = 520
   ClientWidth = 760
   Menu = MainMenuManyTools
+  OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '2.2.6.0'
   object PanelFunctions: TPanel
@@ -30,6 +31,7 @@ object MainForm: TMainForm
         'Random Hex Generator'
       )
       ItemHeight = 16
+      OnSelectionChange = ListBoxFunctionsSelectionChange
       TabOrder = 0
     end
   end
