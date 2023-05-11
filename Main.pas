@@ -5,7 +5,8 @@ unit Main;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  Menus, About;
 
 type
 
@@ -14,9 +15,13 @@ type
   TMainForm = class(TForm)
     LabelFunctionName: TLabel;
     ListBoxFunctions: TListBox;
+    MainMenuManyTools: TMainMenu;
+    MenuItemHelp: TMenuItem;
+    MenuItemAbout: TMenuItem;
     PanelStage: TPanel;
     PanelFunctions: TPanel;
     Splitter1: TSplitter;
+    procedure MenuItemAboutClick(Sender: TObject);
   private
 
   public
@@ -29,6 +34,13 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TMainForm }
+
+procedure TMainForm.MenuItemAboutClick(Sender: TObject);
+begin
+  AboutForm.ShowModal;
+end;
 
 end.
 

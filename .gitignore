@@ -2,4 +2,5 @@ ManyTools
 ManyTools.app/
 ManyTools.lps
 lib/
+.DS_Store
 

@@ -6,6 +6,7 @@ object MainForm: TMainForm
   Caption = 'Many Tools'
   ClientHeight = 520
   ClientWidth = 760
+  Menu = MainMenuManyTools
   Position = poScreenCenter
   LCLVersion = '2.2.6.0'
   object PanelFunctions: TPanel
@@ -66,6 +67,17 @@ object MainForm: TMainForm
       ParentColor = False
       ParentFont = False
       Transparent = False
+    end
+  end
+  object MainMenuManyTools: TMainMenu
+    Left = 272
+    Top = 464
+    object MenuItemHelp: TMenuItem
+      Caption = 'Help'
+      object MenuItemAbout: TMenuItem
+        Caption = 'About...'
+        OnClick = MenuItemAboutClick
+      end
     end
   end
 end
