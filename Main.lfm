@@ -8,6 +8,7 @@ object MainForm: TMainForm
   ClientWidth = 760
   Menu = MainMenuManyTools
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   Position = poScreenCenter
   LCLVersion = '2.2.6.0'
   object PanelFunctions: TPanel
@@ -27,11 +28,7 @@ object MainForm: TMainForm
       Width = 240
       Align = alClient
       BorderStyle = bsNone
-      Items.Strings = (
-        'Random Hex Generator'
-        'Random UUID Generator'
-      )
-      ItemHeight = 16
+      ItemHeight = 0
       OnSelectionChange = ListBoxFunctionsSelectionChange
       TabOrder = 0
     end

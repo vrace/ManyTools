@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  Menus, About, RandomHex, RandomUUID;
+  Menus, About, FunctionRouter;
 
 type
 
@@ -22,14 +22,14 @@ type
     PanelFunctions: TPanel;
     Splitter1: TSplitter;
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
     procedure ListBoxFunctionsSelectionChange(Sender: TObject; User: boolean);
     procedure MenuItemAboutClick(Sender: TObject);
   private
     selectedFunction: String;
     selectedForm: TForm;
-    function SelectFunctionForm(selected: String): TForm;
+    router: TFunctionRouter;
   public
-
   end;
 
 var
@@ -52,19 +52,16 @@ var
   selected: String;
 begin
   selected := ListBoxFunctions.GetSelectedText;
-  if selected <> selectedFunction then
-  begin
+  if selected <> selectedFunction then begin
     selectedFunction := selected;
     PanelStage.Caption := '';
     LabelFunctionName.Caption := selected;
-    if selectedForm <> Nil then
-    begin
+    if selectedForm <> Nil then begin
       selectedForm.Hide;
     end;
 
-    selectedForm := SelectFunctionForm(selected);
-    if selectedForm <> Nil then
-    begin
+    selectedForm := router.GetFunction(selected);
+    if selectedForm <> Nil then begin
       selectedForm.Parent := PanelStage;
       selectedForm.Align := TAlign.alTop;
       selectedForm.Show;
@@ -76,16 +73,13 @@ procedure TMainForm.FormCreate(Sender: TObject);
 begin
   selectedFunction := '';
   selectedForm := Nil;
+  router := TFunctionRouter.Create;
+  ListBoxFunctions.Items := router.GetFunctionList;
 end;
 
-function TMainForm.SelectFunctionForm(selected: String): TForm;
+procedure TMainForm.FormDestroy(Sender: TObject);
 begin
-  case selected of
-    'Random Hex Generator': result := RandomHexForm;
-    'Random UUID Generator': result := RandomUUIDForm;
-  else
-    result := Nil;
-  end;
+  FreeAndNil(router);
 end;
 
 end.

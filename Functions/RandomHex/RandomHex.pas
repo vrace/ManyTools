@@ -55,8 +55,7 @@ var
   i: Integer;
 begin
   result := '';
-  for i := 1 to StrToInt(EditHexLength.Text) do
-  begin
+  for i := 1 to StrToInt(EditHexLength.Text) do begin
     result := result + HEX_WHEEL[Random(Length(HEX_WHEEL)) + 1];
   end;
 end;
