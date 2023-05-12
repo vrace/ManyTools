@@ -64,6 +64,12 @@
         <Filename Value="Functions/FunctionRouter.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Functions/Base64Text/Base64Text.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Base64TextForm"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -73,7 +79,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Functions/RandomHex;Functions/RandomUUID;Functions"/>
+      <OtherUnitFiles Value="Functions/RandomHex;Functions/RandomUUID;Functions;Functions/Base64Text"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

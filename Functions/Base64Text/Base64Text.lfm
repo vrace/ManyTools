@@ -1,0 +1,101 @@
+object Base64TextForm: TBase64TextForm
+  Left = 476
+  Height = 336
+  Top = 185
+  Width = 569
+  Caption = 'Base64 Text Encoding/Decoding'
+  ClientHeight = 336
+  ClientWidth = 569
+  OnResize = FormResize
+  LCLVersion = '2.2.6.0'
+  object PanelMain: TPanel
+    Left = 8
+    Height = 320
+    Top = 8
+    Width = 553
+    Align = alClient
+    BorderSpacing.Around = 8
+    BevelOuter = bvNone
+    ClientHeight = 320
+    ClientWidth = 553
+    TabOrder = 0
+    object GroupBoxRawText: TGroupBox
+      Left = 0
+      Height = 105
+      Top = 0
+      Width = 553
+      Align = alTop
+      Caption = 'Raw Text'
+      ClientHeight = 78
+      ClientWidth = 543
+      TabOrder = 0
+      object MemoRawText: TMemo
+        Left = 4
+        Height = 70
+        Top = 4
+        Width = 535
+        Align = alClient
+        BorderSpacing.Around = 4
+        ScrollBars = ssAutoVertical
+        TabOrder = 0
+      end
+    end
+    object PanelButtons: TPanel
+      Left = 0
+      Height = 28
+      Top = 113
+      Width = 553
+      Align = alTop
+      AutoSize = True
+      BorderSpacing.Top = 8
+      BevelOuter = bvNone
+      ClientHeight = 28
+      ClientWidth = 553
+      TabOrder = 1
+      object ButtonEncode: TButton
+        Left = 4
+        Height = 20
+        Top = 4
+        Width = 250
+        Align = alLeft
+        BorderSpacing.Around = 4
+        Caption = 'Base64 Encode'
+        OnClick = ButtonEncodeClick
+        TabOrder = 0
+      end
+      object ButtonDecode: TButton
+        AnchorSideLeft.Side = asrBottom
+        Left = 299
+        Height = 20
+        Top = 4
+        Width = 250
+        Align = alRight
+        BorderSpacing.Around = 4
+        Caption = 'Base64 Decode'
+        OnClick = ButtonDecodeClick
+        TabOrder = 1
+      end
+    end
+    object GroupBoxEncoded: TGroupBox
+      Left = 0
+      Height = 105
+      Top = 149
+      Width = 553
+      Align = alTop
+      BorderSpacing.Top = 8
+      Caption = 'Encoded'
+      ClientHeight = 78
+      ClientWidth = 543
+      TabOrder = 2
+      object MemoEncoded: TMemo
+        Left = 4
+        Height = 70
+        Top = 4
+        Width = 535
+        Align = alClient
+        BorderSpacing.Around = 4
+        TabOrder = 0
+      end
+    end
+  end
+end
